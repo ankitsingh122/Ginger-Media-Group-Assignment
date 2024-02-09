@@ -21,7 +21,7 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:3000/api/signup', formData);
+      const response = await axios.post('https://backend-7gx2.onrender.com/api/signup', formData);
       alert("Account created")
       navigate('/login');
     } catch (error) {
