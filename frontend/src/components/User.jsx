@@ -57,7 +57,7 @@ const User = () => {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const response = await axios.get(`https://backend-7gx2.onrender.com/api/user/`);
+        const response = await axios.get(`http://localhost:3000/api/user/`);
         setUser(response.data);
         setFormData({ ...response.data });
         setError('');
@@ -84,13 +84,13 @@ const User = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.put(`https://backend-7gx2.onrender.com/api/user/`, formData);
+      const response = await axios.put(`http://localhost:3000/api/user/`, formData);
       setUser(response.data);
       setFormData({ ...response.data });
       setEditing(false);
       
       // Fetch updated user data
-      const updatedResponse = await axios.get(`https://backend-7gx2.onrender.com/api/user/`);
+      const updatedResponse = await axios.get(`http://localhost:3000/api/user/`);
       setUser(updatedResponse.data);
       setFormData({ ...updatedResponse.data });
     } catch (error) {
@@ -121,9 +121,9 @@ const User = () => {
 <div className="flex items-center justify-center mb-6">
           {!editing && (
             <>
-             
-              <button onClick={handleEdit} className="text-white bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 shadow-lg shadow-cyan-500/50 dark:shadow-lg dark:shadow-cyan-800/80 font-medium rounded-lg text-sm px-4 py-2 text-center me-2 mb-2">Edit</button>
-
+              <button onClick={handleEdit} className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                Edit
+              </button>
               {localStorage.getItem('token') ? (
                 <button onClick={handleSignOut} className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 ml-4 rounded focus:outline-none focus:shadow-outline">
                   Sign Out
