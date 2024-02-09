@@ -28,7 +28,7 @@ const UserDisplay = ({ user }) => (
 );
 
 const UserEdit = ({ formData, handleChange, handleSubmit }) => (
-  <form onSubmit={handleSubmit}>
+  <form className = "px-80"  onSubmit={handleSubmit}>
     <div className="mb-4">
       <input
         id="name"
@@ -42,10 +42,65 @@ const UserEdit = ({ formData, handleChange, handleSubmit }) => (
         className="w-full px-3 py-2 border border-gray-600 rounded-md focus:outline-none focus:border-blue-500 text-black"
       />
     </div>
-    {/* Other input fields */}
+    <div className="mb-4">
+      <input
+        id="city"
+        name="city"
+        type="text"
+        autoComplete="city"
+        required
+        value={formData.city || ''}
+        onChange={handleChange}
+        placeholder="City"
+        className="w-full px-3 py-2 border border-gray-600 rounded-md focus:outline-none focus:border-blue-500 text-black"
+      />
+    </div>
+    <div className="mb-4">
+      <input
+        id="university"
+        name="university"
+        type="text"
+        autoComplete="university"
+        required
+        value={formData.university || ''}
+        onChange={handleChange}
+        placeholder="University"
+        className="w-full px-3 py-2 border border-gray-600 rounded-md focus:outline-none focus:border-blue-500 text-black"
+      />
+    </div>
+    <div className="mb-4">
+      <input
+        id="email"
+        name="email"
+        type="email"
+        autoComplete="email"
+        required
+        value={formData.email || ''}
+        onChange={handleChange}
+        placeholder="Email"
+        className="w-full px-3 py-2 border border-gray-600 rounded-md focus:outline-none focus:border-blue-500 text-black"
+      />
+    </div>
+    <div className="mb-4">
+      <input
+        id="phone"
+        name="phone"
+        type="text"
+        autoComplete="phone"
+        required
+        value={formData.phone || ''}
+        onChange={handleChange}
+        placeholder="Phone"
+        className="w-full px-3 py-2 border border-gray-600 rounded-md focus:outline-none focus:border-blue-500 text-black"
+      />
+    </div>
+    <div className="flex items-center justify-center mb-6">
+      <button type="submit" className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+        Save Changes
+      </button>
+    </div>
   </form>
 );
-
 const User = () => {
   const { id } = useParams();
   const [user, setUser] = useState({});
@@ -57,7 +112,7 @@ const User = () => {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const response = await axios.get(`http://localhost:3000/api/user/`);
+        const response = await axios.get(`https://backend-7gx2.onrender.com/api/user/`);
         setUser(response.data);
         setFormData({ ...response.data });
         setError('');
@@ -84,13 +139,13 @@ const User = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.put(`http://localhost:3000/api/user/`, formData);
+      const response = await axios.put(`https://backend-7gx2.onrender.com/api/user/`, formData);
       setUser(response.data);
       setFormData({ ...response.data });
       setEditing(false);
       
       // Fetch updated user data
-      const updatedResponse = await axios.get(`http://localhost:3000/api/user/`);
+      const updatedResponse = await axios.get(`https://backend-7gx2.onrender.com/api/user/`);
       setUser(updatedResponse.data);
       setFormData({ ...updatedResponse.data });
     } catch (error) {
@@ -138,9 +193,11 @@ const User = () => {
         </div>
         <div className="text-center text-sm">
           <Link to="/" className="text-blue-400">Back to Home</Link>
-        </div>      </div>
+        </div>
+      </div>
     </div>
   );
 };
+
 
 export default User;
