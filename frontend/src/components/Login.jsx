@@ -37,8 +37,8 @@ const Login = () => {
   return (
     <div className="flex justify-center items-center h-screen bg-gradient-to-r from-neutral-700 to-white">
       <div className="max-w-md w-full absolute bg-white bg-opacity-40 rounded-[90px] shadow p-10">
-        <h2 className="text-3xl font-bold mb-6 text-center">Sign in to your account</h2>
-        <form onSubmit={handleSubmit}>
+        <h2 className="text-3xl font-bold mb-6 text-center font-serif-Times New Roman">Sign in to your account</h2>
+        <form className='px-20' onSubmit={handleSubmit}>
           <div className="mb-4">
             <input
               type="email"
@@ -68,8 +68,8 @@ const Login = () => {
           </div>
           {error && <p className="text-red-500 text-sm mb-4">{error}</p>}
           <div className="text-center text-sm">
-            <span className="text-gray-400">Don't have an account?</span>
-            <Link to="/signup" className="text-blue-400 ml-1">Sign up</Link>
+            <span className="text-black">Don't have an account?</span>
+            <Link to="/signup" className="text-red-500 ml-1">Sign up</Link>
           </div>
         </form>
       </div>

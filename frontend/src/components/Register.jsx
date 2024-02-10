@@ -9,8 +9,8 @@ const Register = () => {
     email: '',
     password: '',
     phone: '',
-    university: '', // New field for university
-    city: ''       // New field for city
+    university: '', 
+    city: ''       
   });
   const [error, setError] = useState('');
 
@@ -33,7 +33,7 @@ const Register = () => {
     <div className="flex justify-center items-center h-screen bg-gradient-to-r from-neutral-700 to-white">
       <div className="max-w-md w-full absolute bg-white bg-opacity-40 rounded-[90px] shadow p-8">
         <h2 className="text-2xl font-bold mb-8 text-center text-black">Sign Up for Our Account</h2>
-        <form onSubmit={handleSubmit}>
+        <form className='px-20' onSubmit={handleSubmit}>
           <div className="mb-4">
             <input
               type="text"

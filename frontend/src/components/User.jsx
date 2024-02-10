@@ -166,7 +166,7 @@ const User = () => {
   return (
     <div className="flex justify-center items-center h-screen bg-gradient-to-r from-neutral-700 to-white">
       <div className="max-w-4xl w-full absolute bg-white bg-opacity-40 rounded-[90px] shadow py-10 m-40">
-        <h2 className="text-3xl font-bold mb-6 text-center">User Details</h2>
+        <h2 className="text-3xl font-bold mb-6 text-center  font-serif">User Details</h2>
         {error && <p className="text-red-500 text-sm mb-4">{error}</p>}
         {editing ? (
           <UserEdit formData={formData} handleChange={handleChange} handleSubmit={handleSubmit} />
@@ -176,13 +176,14 @@ const User = () => {
 <div className="flex items-center justify-center mb-6">
           {!editing && (
             <>
-              <button onClick={handleEdit} className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
-                Edit
-              </button>
+              
+              <button onClick={handleEdit} className="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-lg text-sm px-4 py-2 text-center me-2 mb-2 mt-3 ">Edit</button>
+
               {localStorage.getItem('token') ? (
-                <button onClick={handleSignOut} className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 ml-4 rounded focus:outline-none focus:shadow-outline">
-                  Sign Out
-                </button>
+              
+                <button onClick={handleSignOut} className="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-sm px-4 py-2 text-center me-2 mb-2 mt-3 ml-7">Sign Out</button>
+
+                
               ) : (
                 <Link to="/login" className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 ml-4 rounded focus:outline-none focus:shadow-outline">
                   Login First
@@ -192,7 +193,7 @@ const User = () => {
           )}
         </div>
         <div className="text-center text-sm">
-          <Link to="/" className="text-blue-400">Back to Home</Link>
+          <Link to="/" className="text-slate-500 hover:text-blue-600">Back to Home</Link>
         </div>
       </div>
     </div>
