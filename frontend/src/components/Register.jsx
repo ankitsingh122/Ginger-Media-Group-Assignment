@@ -30,7 +30,7 @@ const Register = () => {
   };
 
   return (
-    <div className="flex justify-center items-center h-screen bg-gradient-to-r from-neutral-700 to-white">
+    <div className="flex justify-center items-center h-screen bg-gradient-to-r  from-purple-900 to-fuchsia-950">
       <div className="max-w-md w-full absolute bg-white bg-opacity-40 rounded-[90px] shadow p-8">
         <h2 className="text-2xl font-bold mb-8 text-center text-black">Sign Up for Our Account</h2>
         <form className='px-20' onSubmit={handleSubmit}>
@@ -101,14 +101,14 @@ const Register = () => {
             />
           </div>
           <div className="mb-4">
-            <button type="submit" className="w-full bg-blue-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+            <button type="submit" className="w-fulltext-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80  font-bold py-2 px-4 ml-16 rounded focus:outline-none focus:shadow-outline">
               Sign up
             </button>
           </div>
           {error && <p className="text-red-500 text-sm mb-4">{error}</p>}
           <div className="text-center">
-            <span className="text-gray-400">Already have an account?</span>
-            <Link to="/login" className="text-blue-400 ml-1">Login</Link>
+            <span className="text-black font-semibold">Already have an account?</span>
+            <Link to="/login" className="text-purple hover:text-white font-semibold ml-1">Login</Link>
           </div>
         </form>
       </div>

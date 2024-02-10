@@ -95,7 +95,7 @@ const UserEdit = ({ formData, handleChange, handleSubmit }) => (
       />
     </div>
     <div className="flex items-center justify-center mb-6">
-      <button type="submit" className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+      <button type="submit" className="bg-purple-600 hover:bg-purple-900 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
         Save Changes
       </button>
     </div>
@@ -164,7 +164,7 @@ const User = () => {
   };
 
   return (
-    <div className="flex justify-center items-center h-screen bg-gradient-to-r from-neutral-700 to-white">
+    <div className="flex justify-center items-center h-screen bg-gradient-to-r from-purple-900 to-fuchsia-950">
       <div className="max-w-4xl w-full absolute bg-white bg-opacity-40 rounded-[90px] shadow py-10 m-40">
         <h2 className="text-3xl font-bold mb-6 text-center  font-serif">User Details</h2>
         {error && <p className="text-red-500 text-sm mb-4">{error}</p>}
@@ -193,7 +193,7 @@ const User = () => {
           )}
         </div>
         <div className="text-center text-sm">
-          <Link to="/" className="text-slate-500 hover:text-blue-600">Back to Home</Link>
+          <Link to="/" className="text-lime-50 hover:text-yellow-950">Back to Home</Link>
         </div>
       </div>
     </div>

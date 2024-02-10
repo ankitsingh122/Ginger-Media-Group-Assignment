@@ -35,7 +35,7 @@ const Login = () => {
   
 
   return (
-    <div className="flex justify-center items-center h-screen bg-gradient-to-r from-neutral-700 to-white">
+    <div className="flex justify-center items-center h-screen bg-gradient-to-r from-violet-950 via-purple-500 to-pink-500">
       <div className="max-w-md w-full absolute bg-white bg-opacity-40 rounded-[90px] shadow p-10">
         <h2 className="text-3xl font-bold mb-6 text-center font-serif-Times New Roman">Sign in to your account</h2>
         <form className='px-20' onSubmit={handleSubmit}>
